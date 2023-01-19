@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <script>
+        var dt = new Date();
+        var hours = prompt("enter the hour");
+        if (hours > 24) {
+            alert("enter valid hour")
+        }
+        else {
+            var AmOrPm = hours >= 12 ? 'pm' : 'am';
+            hours = (hours % 12);
+            if (hours == 0) {
+                hours = 12;
+            }
+            var finalTime = "Time is " + hours + ": 00 " + AmOrPm;
+            alert(finalTime);
+        }
+    </script>
+</body>
+
+</html>

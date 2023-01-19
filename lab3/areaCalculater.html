@@ -1,0 +1,86 @@
+<html>
+
+<body>
+    <script>
+        var shape = prompt("enter the shape (circle,triangle,square,rectangle,parallelogram,trapezium,ellipse)");
+        switch (shape) {
+            case 'circle':
+                circleArea();
+                break;
+
+            case 'triangle':
+                triangleArea();
+                break;
+
+            case 'square':
+                squareArea();
+                break;
+
+            case 'rectangle':
+                rectangleArea();
+                break;
+
+            case 'parallelogram':
+                parallelogramArea();
+                break;
+
+            case 'trapezium':
+                trapeziumArea();
+                break;
+
+            case 'ellipse':
+                ellipseArea();
+                break;
+
+
+        }
+        function circleArea() {
+            var radious = prompt("enter the radious oa circle");
+            result = Math.PI * Math.pow(radious, 2);
+            alert("the area of circle is " + result);
+        }
+        function triangleArea() {
+            var base = prompt("enter the base ");
+            var height = prompt("enter the  height");
+            result = 0.5 * base * height;
+            alert("the area of triangle is " + result);
+        }
+        
+        function squareArea() {
+            var a= prompt("enter the length of side");
+            result =Math.pow(a,2);
+            alert("the area of square is " + result);
+        }
+
+        function rectangleArea() {
+            var l= prompt("enter the length");
+            var w= prompt("enter the width ");
+            result =l*w;
+            alert("the area of rectangle is " + result);
+        }
+
+        function parallelogramArea() {
+            var b= prompt("enter the base of side");
+            var h= prompt("enter the vertical heigh");
+            result =b*h;
+            alert("the area of parallelogram is " + result);
+        }
+
+        function trapeziumArea(){
+            var a= prompt("enter the length of side");
+            var b= prompt("enter the length of other side");
+            var h= prompt("enter the heigh");
+            result =0.5*(Number(a)+Number(b))*h;
+            alert("the area of trapezium is " + result);
+        }
+        function ellipseArea() {
+            var a= prompt("enter the ½ minor axis");
+            var b= prompt("enter the ½ major axis");
+            result = Math.PI * b*a;
+            alert("the area of ellipse is " + result);
+        }
+
+    </script>
+</body>
+
+</html>

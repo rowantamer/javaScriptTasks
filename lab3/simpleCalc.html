@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <script>
+        var firstNumber = prompt("enter the first number");
+        var operator = prompt("enter the operator (+,-,*,/,%)");
+        var secondNumber = prompt("enter the second number");
+        switch (operator) {
+            case '+':
+                result = Number(firstNumber) + Number(secondNumber);
+                alert(firstNumber + "+" + secondNumber + "=" + result);
+                break;
+            case '-':
+                var result = firstNumber - secondNumber;
+                alert(firstNumber + "-" + secondNumber + "=" + result);
+                break;
+
+            case '*':
+                var result = firstNumber * secondNumber;
+                alert(firstNumber + "*" + secondNumber + "=" + result);
+                break;
+
+            case '/':
+                var result = firstNumber / secondNumber;
+                alert(firstNumber + "/" + secondNumber + "=" + result);
+                break;
+
+            case '%':
+                var result = firstNumber % secondNumber;
+                alert(firstNumber + "%" + secondNumber + "=" + result);
+                break;
+            default:
+                alert('Invalid operator');
+                break;
+        }
+
+
+    </script>
+</body>
+
+</html>

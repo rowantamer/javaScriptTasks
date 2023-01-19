@@ -1,0 +1,21 @@
+<html>
+
+<body>
+    <script>
+
+        var word = prompt("please enter the word you want count");
+        let count = 0;
+        const vowels = ["a", "e", "i", "o", "u"]
+
+        for (let letter of word.toLowerCase()) {
+        if (vowels.includes(letter)) {
+            count++;
+        }
+    }
+   
+        alert("the number of vowels in this string is "+count);
+
+    </script>
+</body>
+
+</html>

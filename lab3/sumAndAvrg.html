@@ -1,0 +1,21 @@
+<html>
+
+<body>
+    <script>
+        var size = prompt("enter how many number you want to get  sum and average:");
+        var arr = [];
+        for (var i = 0; i < size; i++) {
+            var num = prompt(" enter the number " + (Number(i) + 1));
+            arr.push(num);
+
+        }
+        var sum = 0;
+        for (var i = 0; i < size; i++) {
+            sum += Number(arr[i]);
+        }
+        alert(" the sum of " + size + "  numbers is " + sum + " and average is " + (Number(sum) / Number(size)));
+
+    </script>
+</body>
+
+</html>

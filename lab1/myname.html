@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <script>
+             var firstName = prompt("Please enter your first name: ");
+             var lastName = prompt("Please enter your last name: ");
+             var full= firstName+" "+lastName;
+             var fullName = confirm(firstName+" "+lastName);
+             var birthDay = prompt("Please enter your enter his birth year ");
+             var currentTime = new Date();
+             var year = currentTime.getFullYear();
+             var age = year-birthDay;
+             var message = "welcome" + " "+ full +" you are "+age +" "+"years old";
+             document.write(message)
+    
+        </script>
+    </body>
+   
+</html>

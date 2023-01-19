@@ -1,0 +1,51 @@
+<html>
+
+<body>
+    <script>
+        function Person(fullNmae, money, sleepMood, healthRate) {
+            return {
+                fullNmae,
+                money,
+                sleepMood,
+                healthRate,
+
+                sleep(hours) {
+                    if (hours == 7) {
+                        this.sleepMood = "happy";
+                    }
+                    else if (hours < 7) {
+                        this.sleepMood = "tired";
+                    }
+                    else if (hours > 7) {
+                        this.sleepMood = "lazy";
+                    }
+                },
+                eat(meals) {
+                    if (meals == 3) {
+                        this.healthRate = "health rate 100";
+                    }
+                    else if (meals == 2) {
+                        this.healthRate = "health rate 75";
+                    }
+                    else if (meals == 1) {
+                        this.healthRate = "health rate 50";
+                    }
+
+                },
+                buy(items) {
+                    for (let i = 0; i < items; i++) {
+                        this.money -= 10;
+                    }
+                }
+            }
+        }
+
+        const person1 = Person('ali tamer ', 6000, 'tired', '50');
+        person1.sleep(7);
+        person1.eat(3);
+        person1.buy(20);
+        console.log(person1);
+    </script>
+</body>
+
+</html>
