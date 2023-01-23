@@ -1,0 +1,205 @@
+<html>
+
+<body>
+    <script>
+        class Person {
+            constructor(fullNmae, money, sleepMood) {
+                this.fullNmae = fullNmae;
+                this.money = money;
+                this.sleepMood = sleepMood;
+                console.log(this);
+            }
+        }
+        class Employee extends Person {
+            #salary
+            #healthRate
+            constructor(fullNmae, money, sleepMood, healthRate, id, email, workMood, salary, isManager) {
+                super(fullNmae, money, sleepMood, healthRate);
+                this.id = id;
+                this.#healthRate = healthRate;//must be between 0 and 100
+                this.email = email;
+                this.workMood = workMood;
+                this.#salary = salary;//must be 1000 or more
+                this.isManager = isManager;
+
+            }
+            work(hours) {
+                if (hours == 8) {
+                    this.workMood = "happy";
+                }
+                else if (hours > 8) {
+                    this.workMood = "tired";
+                }
+                else if (hours < 8) {
+                    this.workMood = "lazy";
+                }
+            };
+            getSalary() {
+                return this.#salary
+            }
+
+            setSalary(value) {
+                this.#salary = value
+                if (value < 1000) {
+                    alert("you must enter salary begins from 1000 or more")
+                }
+            }
+            gethealthRate() {
+                return this.#healthRate
+            }
+
+            sethealthRate(rate) {
+                this.#healthRate = rate
+                if (rate < 0 || rate > 100) {
+                    alert("you must enter healthRate between 0 and 100")
+                }
+            }
+            getIsManager() {
+                return this.isManager;
+            }
+        }
+        //----------office------------
+        class office {
+            constructor(officeName, Employees) {
+                this.officeName = officeName;
+                this.Employees = Employees;
+            }
+
+            getAllEmplyees() {
+                let index = 1;
+                for (let x of this.Employees) {
+                    console.log(`Emp ${index}`)
+                    console.log(x)
+                    index++;
+                }
+            }
+
+            getEmployee(empId) {
+                var Employees = 0;
+                this.Employees.forEach(element => {
+                    if (element.id == empId) {
+                        Employees = element;
+                    }
+                });
+                if (Employees.getIsManager() == "yes") {
+
+                   
+
+                }
+                return Employees;
+            };
+
+            hire(Employee) {
+                console.log("this employee is hired.....");
+                this.Employees.push(Employee);
+                return this.Employees;
+            };
+
+            fireEmp(empId) {
+                var index = 0;
+                for (let emp of this.Employees) {
+                    if (emp.id == empId) {
+                        return console.log(this.Employees.splice(index, 1));
+                    }
+                    index++;
+                }
+
+
+            };
+        };
+        //test
+        //  const rowan = new Employee("rowan tamer", "1000", "50", "50", "1", "rowan@gmail.com", "happy", "6000", "notmanager");
+        //  const shahd = new Employee("shahd tamer", "1500", "75", "75", "2", "shahs@gmail.com", "lazy", "5500", "manager");
+        //  const lamiaa = new Employee("lamiaa khaled", "1000", "50", "50", "3", "rowan@gmail.com", "happy", "6000", "notmanager");
+        //  const EmployeeArray = [rowan, shahd, lamiaa];
+        //  const Myoffice = new office("database", EmployeeArray);
+        // //Myoffice.hire(new Employee("ali tamer", "1000", "50", "50", "6", "rowan@gmail.com", "happy", "6000", "notmanager"));
+        //console.log(Myoffice.getEmployee(shahd.id));
+        // //console.log(Myoffice.fireEmp(shahd.id));
+        // //console.log(Myoffice.getAllEmplyees());
+
+        let flag = true;
+        while (flag) {
+            //enter the office name
+            let newOffice = prompt("enter your office");
+            let employeesOfOfice = [];
+            let Myoffice = new office(newOffice, employeesOfOfice);
+
+            let menue = true;
+            while (menue) {
+                //chose the behaviour you want to do 
+                var whatYouWant = prompt(Myoffice.officeName + ` 
+                for Getting All Employess write: all
+                for Getting Specific Employee(id) write: specific
+                for Adding New Employee write: add
+                for Removeing Employee(id) write: remove
+                for exit write exit`);
+                //to make alphapit tha same if lower or upper 
+                var after = whatYouWant.toLocaleLowerCase();
+
+                switch (after) {
+                    case 'add':
+                        let name = prompt("enter his name ?");
+                        let id = Number(prompt("enter his id ?"));
+                        let email = prompt("enter his email ?");
+                        let sal = Number(prompt("enter his salary ?"));
+                        if(sal<1000){
+                            console.log("please enter salary greater than 1000")
+                            break;
+                        }
+                        let sleepmode = prompt("enter sleepmode like (lazy ,happy,tired)");
+                        let health = prompt("enter his health rate from 0 to 100");
+                        if(health>0 && health>100){
+                            console.log("health must be between 0 and 100");
+                            break;
+                        }
+                        let workmood = prompt("enter his hours of work ");
+                        let isManager = prompt("Is he/she a manger?\n write yes if it true ,else no");
+                        let money = sal;
+                        let newEmp = new Employee(name, money, sleepmode, health, id, email, workmood, sal, isManager);
+                        newEmp.setSalary(sal);
+                        newEmp.sethealthRate(health);
+                        Myoffice.hire(newEmp);
+                        break;
+                    case 'remove':
+                        if (employeesOfOfice.length == 0) {
+                            alert("you dont have any employee in this office")
+                        } else {
+                            let fireById = Number(prompt("enter the Id of employee you want to fire"));
+                            let fired = Myoffice.fireEmp(fireById);
+                            if (fired == null) {
+                                alert("Employee is not found");
+                            }
+                            else{
+                                console.log("the remaning employees are:");
+                                console.log(Myoffice.getAllEmplyees());
+                            }
+                        }
+                        break;
+
+                    case 'all':
+                        Myoffice.getAllEmplyees();
+                        break;
+                    case 'specific':
+                        let empId = Number(prompt("Enter His Id"));
+                        let idStatues = Myoffice.getEmployee(empId);
+                        if (idStatues === undefined) {
+                            alert("Emp is not exist")
+                        } else {
+                            console.log(idStatues);
+                        }
+                        break;
+                    case 'exit':
+                        menu = false;
+                        flag = false;
+                        break;
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
