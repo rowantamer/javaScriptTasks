@@ -1,0 +1,101 @@
+/* *{
+    border: 2px solid pink;
+} */
+*{
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   background-color: #fff;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    /* border: 2px solid green; */
+    margin: 20px auto;
+    width: 564px;
+    height: 600px;
+    position:relative;
+}
+.container img{
+    position: absolute;
+    z-index: 1;
+    width: 564px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition:opacity 1s;
+}
+.container img.active{
+    opacity: 1;
+}
+.container .slider__number{
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 6px;
+}
+.control {
+    width: 564px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+.prev,.next{
+    background-color: pink;
+    color: white;
+    font-size:1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    user-select: none;
+    width: 25%;
+}
+ .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
+  .prev.disabled,
+  .next.disabled {
+    background-color: gray;
+    cursor: no-drop;
+  }
+  .indicator{
+    width:50%;
+  float: left;
+  }
+
+  .indicator ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  .indicator ul li {
+    display: inline-block;
+    background-color: #F6F6F6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  .indicator ul li.active {
+    background-color: pink;
+    color: #FFF;
+  }

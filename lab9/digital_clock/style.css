@@ -1,0 +1,141 @@
+/* *{
+    border: 2px solid green;
+} */
+:root {
+  --cl-digital-bg: #89cff0;
+  --cl-alarm-bg: gray;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.digital__clock {
+  height: 50%;
+  width: 100%;
+  background-color: var(--cl-digital-bg);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.clock__container {
+  max-width: 600px;
+  min-height: 200px;
+  background-color: white;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#clock {
+  background-color: gainsboro;
+  width: 450px;
+  min-height: 150px;
+  border-radius: 1rem;
+  text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 50px 10px;
+  margin: 0px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
+}
+.hours {
+  font-size: 3rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.digital__clock > h2 {
+  color: gray;
+}
+.set__alarm {
+  height: 50%;
+  width: 100%;
+  background-color: var(--cl-alarm-bg);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.alarm__container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  max-width:600px;
+  height: 340px;
+  border-radius: 1rem;
+  gap: 3rem;
+}
+.alarm_container{
+    margin: 0px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    max-width: 650px;
+}
+input{
+    margin-top: 1rem;
+    width: 80px;
+    border-radius: 0.5rem;
+    padding: 10px;
+    border: 1px solid grey;
+    height: 50px;
+}
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: gray;
+    border-radius: 20px;
+    color: white;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap :2rem
+  }
+  .btnn{
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+.done{
+    background-color: #89cff0;
+}
+.cancel{
+    background-color: pink;
+}

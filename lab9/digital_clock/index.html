@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <title>Digital clock with alarm</title>
+</head>
+<div class="container">
+    <div class="digital__clock">
+        <div class="clock__container">
+            <div id ="clock">
+                <div class="days" id ="days"></div>
+                <div class="hours" id="hours"></div>
+                <div class="period" id="period"></div>
+            </div>
+        </div>
+        <h2 class="content">Digital Clock</h2>
+    </div>
+    <div class="set__alarm" >
+        <div class="alarm__container">
+            <h1 class="description"> SET ALARM AFTER</h1>
+            <div class="alarm_container">
+                <div class="cont hour">
+                    <p>HOURS</p>
+                    <input type="number" name="" id="hour" />
+                  </div>
+                  <div class="cont min">
+                    <p>MINUTES</p>
+                    <input type="number" name="" id="min" />
+                  </div>
+                  <div class="cont sec">
+                    <p>SECONDS</p>
+                    <input type="number" name="" id="sec" />
+                  </div>
+            </div>
+            <div class="btn">
+                <button class=" btnn done" id="done" type="button">Set</button>
+                <button class="btnn cancel" id="cancel" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<html>
+
+   
+    <script src="./script.js"></script>
+</body>
+
+</html>
